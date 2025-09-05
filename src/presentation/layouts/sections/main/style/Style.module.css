@@ -1,0 +1,54 @@
+.menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  background: rgba(22, 22, 22, 0.9);
+  backdrop-filter: blur(6px);
+  border-top: 2px solid #2a2a2a;
+
+  padding: 0.5rem 0;
+  z-index: 1000;
+}
+
+.menuItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+  color: #b3b3b3;
+  font-size: 0.75rem;
+  font-weight: 500;
+
+  transition: all 0.2s ease;
+}
+
+.icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.2rem;
+  transition: transform 0.2s ease;
+}
+
+.menuItem:hover {
+  color: #00ffcc;
+}
+
+.active {
+  color: #00ffcc;
+}
+
+.active .icon {
+  transform: scale(1.15); /* анимация увеличения иконки при активном состоянии */
+}
+
+.name {
+    font-family: Inter;
+    font-size: 12px;
+}

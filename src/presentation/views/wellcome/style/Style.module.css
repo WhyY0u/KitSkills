@@ -1,0 +1,44 @@
+.wellcome_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; 
+  align-items: center;
+  min-height: 100vh; 
+  background: #0d0d0d;
+  color: #ffffff;
+  font-family: "Segoe UI", sans-serif;
+  text-align: center;
+  padding: 1rem;
+  overflow-y: auto; 
+}
+.intro {
+  max-width: 700px;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #161616;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.introTitle {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #00ffcc;
+}
+
+.introText {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 0.8rem;
+  color: #eaeaea;
+}
+
+.warning {
+  font-size: 0.95rem;
+  color: #ff6666;
+  font-weight: 600;
+  background: rgba(255, 0, 0, 0.1);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}

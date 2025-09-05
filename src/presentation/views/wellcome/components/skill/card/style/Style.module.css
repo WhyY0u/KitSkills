@@ -1,0 +1,120 @@
+.skillCard {
+  background: #1a1a1a;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skillCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+}
+
+.skillName {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  color: #fff;
+}
+
+.skillDescription {
+  font-size: 0.95rem;
+  color: #aaa;
+  margin-bottom: 1rem;
+}
+
+.topResults {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.resultRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0.8rem;
+  border-radius: 0.75rem;
+  background: #2a2a2a;
+  font-size: 0.9rem;
+  transition: transform 0.15s ease;
+}
+
+.resultRow:hover {
+  transform: scale(1.02);
+}
+
+.leftSide {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.podiumIcon {
+  font-size: 1.2rem;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.userName {
+  font-weight: 600;
+  color: #fff;
+}
+
+.userGroup {
+  text-align: left;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+/* Подиумные цвета под тёмную тему */
+.gold {
+  background: linear-gradient(135deg, #2e2a15, #5a4d1a);
+  border: 1px solid #d4af37;
+}
+
+.silver {
+  background: linear-gradient(135deg, #2c2c2c, #444);
+  border: 1px solid #c0c0c0;
+}
+
+.bronze {
+  background: linear-gradient(135deg, #332621, #5a3e2e);
+  border: 1px solid #cd7f32;
+}
+
+.rightSide {
+  display: flex;
+  gap: 0.6rem;
+  font-weight: 500;
+  color: #ccc;
+}
+
+.time {
+  color: #bbb;
+}
+
+.score {
+  color: #fff;
+}
+
+.selectButton {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.6rem;
+  border-radius: 0.75rem;
+  background: #0077ff;
+  color: white;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.selectButton:hover {
+  background: #005ed4;
+}
