@@ -1,6 +1,7 @@
 import { type FC } from "react";
 import styles from "./style/Style.module.css";
 import type { Skill } from "@/domain/entities/skill/Skill";
+import { useNavigate } from "react-router";
 
 interface SkillCardProps {
   skill: Skill;
@@ -10,7 +11,10 @@ const podiumIcons = ["🏆", "🥈", "🥉"];
 const podiumColors = [styles.gold, styles.silver, styles.bronze];
 
 const SkillCardComponent: FC<SkillCardProps> = ({ skill }) => {
-
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate('/compitation/' + skill.id);
+  }
   return (
     <div className={styles.skillCard}>
       <h3 className={styles.skillName}>{skill.name}</h3>
@@ -39,7 +43,7 @@ const SkillCardComponent: FC<SkillCardProps> = ({ skill }) => {
         ))}
       </div>
 
-      <button className={styles.selectButton}>Выбрать</button>
+      <button onClick={handleClick} className={styles.selectButton}>Выбрать</button>
     </div>
   );
 };

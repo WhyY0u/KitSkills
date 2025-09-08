@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import styles from "./style/Style.module.css";
+import { useNavigate } from "react-router";
 
 export interface User {
     name: string;
@@ -12,7 +13,10 @@ const Login = () => {
     const [fullname, setFullname] = useState("");
     const [group, setGroup] = useState("");
     const [user, setUser] = useState<User | null>(null);
-
+    const navigate = useNavigate();
+    const handleClick = () => {
+        navigate('/');
+    }
     useEffect(() => {
         const savedUser = localStorage.getItem("user");
         if (savedUser) setUser(JSON.parse(savedUser));
@@ -59,10 +63,12 @@ const Login = () => {
                 />
 
                 <button
+                    onClick={handleClick}
                     type="submit"
                     className={`${styles.button} ${!isFormValid ? styles.disabled : ""}`}
                     disabled={!isFormValid}
                 >
+
                     Продолжить
                 </button>
             </form>

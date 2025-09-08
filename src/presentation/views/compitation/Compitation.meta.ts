@@ -1,5 +1,5 @@
 const meta = {
-    path: "/compitation",
+    path: "/compitation/:id",
     layout: "main",
     auth: true,
 };
