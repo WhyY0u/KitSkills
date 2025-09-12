@@ -1,0 +1,159 @@
+.history_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 3rem 1rem 1rem 1rem;
+  font-family: "Segoe UI", sans-serif;
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+.headerRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 700px;
+  margin-bottom: 1rem;
+}
+
+.backButton {
+  background: #00ffcc;
+  color: #0d0d0d;
+  border: none;
+  border-radius: 0.75rem;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 12px rgba(0, 255, 204, 0.4);
+  transition: all 0.2s ease;
+}
+
+.backButton:hover {
+  background: #00d4aa;
+  transform: scale(1.05);
+}
+
+.competitionTitle {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #00ffcc;
+}
+
+.skillsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.skillCard {
+  background: rgba(20, 20, 20, 0.85);
+  border-radius: 1rem;
+  padding: 1.2rem 1.5rem;
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.skillCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0px 25px rgba(0, 255, 204, 0.274);
+}
+
+.skillName {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #00ffcc;
+}
+
+.skillDescription {
+  font-size: 0.95rem;
+  color: #ccc;
+  line-height: 1.4;
+}
+
+.skillDescriptionLarge {
+  max-width: 700px;
+  color: #eaeaea;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.selectButton {
+  margin-top: auto;
+  padding: 0.6rem;
+  border-radius: 0.75rem;
+  background: #0077ff;
+  color: white;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.selectButton:hover {
+  background: #005ed4;
+  transform: scale(1.05);
+}
+
+.historyCards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 700px;
+}
+
+.historyCard {
+  background: rgba(30, 30, 30, 0.85);
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+  transition: transform 0.2s ease;
+}
+
+.historyCard:hover {
+  transform: translateY(-3px);
+}
+
+.historyYear {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #f8f9f8;
+  margin-bottom: 0.8rem;
+}
+
+.winnersList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.winnerItem {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  font-size: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  align-items: center;
+}
+
+.winnerItem:last-child {
+  border-bottom: none;
+}
+
+.winnerPlace {
+  font-weight: 700;
+  min-width: 80px;
+  font-size: 0.95rem;
+}
+
+.winnerName {
+  color: #eaeaea;
+}

@@ -13,7 +13,10 @@ const podiumColors = [styles.gold, styles.silver, styles.bronze];
 const SkillCardComponent: FC<SkillCardProps> = ({ skill }) => {
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate('/compitation/' + skill.id);
+    // Передаем данные о компетенции через state при навигации
+    navigate('/compitation/' + skill.id, {
+      state: { skill }
+    });
   }
   return (
     <div className={styles.skillCard}>

@@ -47,6 +47,33 @@
   100% { transform: scale(1); opacity: 1; }
 }
 
+.statusMessage {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0.5rem 0 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.preparationStatus {
+  background-color: rgba(255, 50, 50, 0.15);
+  color: #ff5050;
+  border: 1px solid rgba(255, 50, 50, 0.3);
+}
+
+.testingStatus {
+  background-color: rgba(50, 255, 50, 0.15);
+  color: #50ff50;
+  border: 1px solid rgba(50, 255, 50, 0.3);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 /* 🔽 Мобильная адаптация */
 @media (max-width: 600px) {
   .title {

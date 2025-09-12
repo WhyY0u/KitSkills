@@ -1,55 +1,30 @@
+import { useState, useEffect } from "react";
 import styles from "./style/Style.module.css";
 import TimerComponent from "./components/timer/TimerComponents";
 import SkillListComponent from "./components/skill/list/SkillListComponent";
 import type { Skill } from "@/domain/entities/skill/Skill";
+import { competenciesService } from "@/data/datasources/api/competenciesService";
 
 const WellComePage = () => {
-  const skills: Skill[] = [
-    {
-      id: "1",
-      name: "Веб разработка",
-      description: "Создание современных сайтов, веб-сервисов и интерфейсов.",
-      topResult: [
-        {
-          user: { fullname: "", group: "", id: "", telegramUser: "" },
-          time: "",
-          score: 0
-        },
-        {
-          user: { fullname: "", group: "", id: "", telegramUser: "" },
-          time: "",
-          score: 0
-        },
-        {
-          user: { fullname: "", group: "", id: "", telegramUser: "" },
-          time: "",
-          score: 0
-        },
-      ],
-    },
-    {
-      id: "2",
-      name: "Мобильная разработка",
-      description: "Разработка приложений для Android и iOS.",
-      topResult: [
-        {
-          user: { fullname: "Саша Иванов", group: "ПМ-21", id: "u4", telegramUser: "@sasha" },
-          time: "09:33",
-          score: 0
-        },
-        {
-          user: { fullname: "Маша Ким", group: "ПМ-22", id: "u5", telegramUser: "@masha" },
-          time: "13:20",
-          score: 0
-        },
-        {
-          user: { fullname: "Аян Ермеков", group: "ПМ-23", id: "u6", telegramUser: "@ayan" },
-          time: "18:40",
-          score: 0
-        },
-      ],
-    },
-  ];
+  const [skills, setSkills] = useState<Skill[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchCompetencies = async () => {
+      try {
+        const competenciesData = await competenciesService.getCompetencies();
+        setSkills(competenciesData);
+      } catch (err) {
+        setError('Ошибка при загрузке компетенций');
+        console.error('Ошибка при загрузке компетенций:', err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCompetencies();
+  }, []);
 
 
   return (
@@ -66,8 +41,19 @@ const WellComePage = () => {
         </p>
       </div>
 
-      <TimerComponent initialTime={2 * 24 * 60 * 60} />
-      <SkillListComponent skills={skills} />
+      <TimerComponent />
+      
+      {loading ? (
+        <div className={styles.loadingContainer}>
+          <p>Загрузка компетенций...</p>
+        </div>
+      ) : error ? (
+        <div className={styles.errorContainer}>
+          <p>{error}</p>
+        </div>
+      ) : (
+        <SkillListComponent skills={skills} />
+      )}
     </div>
   );
 
